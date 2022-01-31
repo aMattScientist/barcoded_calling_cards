@@ -1,4 +1,4 @@
-This is a fork of Arnav Moudgil's Calling Card analysis repository (https://github.com/arnavm/calling_cards), with minor modifications to enable analysis of barcoded self-reporting transposon calling cards. 
+This is a fork of Arnav Moudgil's Calling Card analysis repository (https://github.com/arnavm/calling_cards), with minor modifications to enable analysis of barcoded self-reporting transposon calling cards. Reference: https://www.biorxiv.org/content/10.1101/2021.04.15.439516
 
 # Prerequisites
 
