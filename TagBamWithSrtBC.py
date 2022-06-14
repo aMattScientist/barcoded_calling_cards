@@ -21,7 +21,7 @@ if __name__ == "__main__":
     outfile = pysam.AlignmentFile(args.output, "wb", template = bamfile)
     tag = args.tag.split(':')
     for read in bamfile:
-        srt_bc = "".join(read.query_name.split('_')[-2:]) ## Last 2 elements of read name are from UMI tools (3bp UMI and 1bp CellBarcode, separated by _. I merge them here as a 4bp srt barcode
+        srt_bc = "".join(read.query_name.split('_')[-1:]) ## Last element of the read name is the SRT barcode from UMI tools (4 bp CellBarcode and 0 bp UMI)
         read.set_tag(tag[0], srt_bc, tag[1])
         outfile.write(read)
     # Close files
