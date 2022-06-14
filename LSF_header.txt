@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#BSUB -J BC_SRT[2] # Job name, and samples to analyze by line number in manifest
+#BSUB -J BC_SRT[4] # Job name, and samples to analyze by line number in manifest
 #BSUB -P acc_name  # allocation account
 #BSUB -q queue_name # queue
 #BSUB -n 2 # number of compute cores
@@ -12,4 +12,3 @@
 #BSUB -L /bin/bash # Initialize the execution environment
 
 SAMPLE_LINE=$( sed -n ${LSB_JOBINDEX}p manifest.csv )
-
