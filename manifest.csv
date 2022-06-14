@@ -1,0 +1,5 @@
+filename,barcode,index1,index2
+callingcards05_S5_R1_001.fastq.gz,NNNN,SIC89,
+ASCL1_jointBRB.fastq.gz,NN,SIC80,
+MYOD1_jointBRB.fastq.gz,NN,SIC81,
+Unfused_jointBRB.fastq.gz,NN,SIC82,
