@@ -72,6 +72,6 @@ Using LSF:
 
 # Expected Results
 
-This script should generate a file named NN_MYOD1_jointBRB_hg38_map_sort_final.ccf with approximately 587277 lines. Each line corresponds to a genomic insertion of a barcoded SRT.  
-
+This script should generate a file named NN_MYOD1_jointBRB_hg38_map_sort_final.ccf with approximately 587277 lines.   
+Each line corresponds to a genomic insertion of a barcoded SRT.   
 
