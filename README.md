@@ -31,7 +31,7 @@ The main shell script requires:
 
 # Getting Started
 
-Create a new directory, for example, named CALLINGCARDS.  
+Within your Linux/Unix based high-performance computing environment, create a new directory, for example, named CALLINGCARDS.  
 Within this directory, make 3 more directories:  output_and_analysis, raw, and CODE.  
 Download the contents of this repository to the CODE directory.  
 
