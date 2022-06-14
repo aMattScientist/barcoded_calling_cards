@@ -1,0 +1,15 @@
+#!/bin/bash
+
+#BSUB -J BC_SRT[2] # Job name, and samples to analyze by line number in manifest
+#BSUB -P acc_name  # allocation account
+#BSUB -q queue_name # queue
+#BSUB -n 2 # number of compute cores
+#BSUB -W 4:00 # walltime in HH:MM
+#BSUB -R rusage[mem=20000] # Memory per requested core 
+#BSUB -R span[hosts=1] # all cores from the same node
+#BSUB -o %J.stdout # output log (%J : JobID)
+#BSUB -eo %J.stderr # error log
+#BSUB -L /bin/bash # Initialize the execution environment
+
+SAMPLE_LINE=$( sed -n ${LSB_JOBINDEX}p manifest.csv )
+
