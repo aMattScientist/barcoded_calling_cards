@@ -34,12 +34,12 @@ Within this directory, make 3 more directories:  output_and_analysis, raw, and C
 Download the contents of this repository to the CODE directory.  
 
 If your cluster uses Slurm, append the SLURM_header to bulkRNACallingCards and save this as a shell script.  
-> cat SLURM_header.txt bulkRNACallingCards > bulkRNACallingCards.sh
+> cat SLURM_header.txt bulkRNACallingCardsBarcodes > bulkRNACallingCardsBarcodes.sh
 
 Alternatively, if your cluster uses LSF, append the LSF_header.  
-> cat LSF_header.txt bulkRNACallingCards > bulkRNACallingCards.sh  
+> cat LSF_header.txt bulkRNACallingCardsBarcodes > bulkRNACallingCardsBarcodes.sh  
 
-Change the relevant path names in bulkRNACallingCards.sh as appropriate    
+Change the relevant path names in bulkRNACallingCardsBarcodes.sh as appropriate    
 
 Move the barcode_safelist.txt and manifest.csv out of the CODE directory into the **'CALLINGCARDS'** directory.  
 
@@ -65,10 +65,10 @@ Note: this filename corresponds to Line 4 of manifest.csv. Both SLURM_header and
 From the **'CALLINGCARDS'** directory, run the following command to submit the job.  
 
 Using Slurm:   
->sbatch CODE/bulkRNACallingCards.sh  
+>sbatch CODE/bulkRNACallingCardsBarcodes.sh  
 
 Using LSF:
->bsub < CODE/bulkRNACallingCards.sh    
+>bsub < CODE/bulkRNACallingCardsBarcodes.sh    
 
 # Expected Results
 
