@@ -22,18 +22,20 @@ To figure out which version of `python` is installed by default:
 Running this software also requires several common bioinformatics modules, ideally on a Linux/Unix based high-performance computing environment. 
 
 The main shell script requires: 
--`cutadapt`
--`umi-tools`
--`star (or NovoAlign)` 
-=`samtools`
-=`bedtools`
-=`java`
+- `cutadapt`
+- `umi-tools`
+- `star or (NovoAlign)` 
+- `samtools`
+- `bedtools`
+- `java`
 
 # Getting Started
 
-Create a new directory, for example, named CALLINGCARDS
-Within this directory, make 3 more directories:  output_and_analysis, raw, and CODE
-Download the contents of this repository to the CODE directory
+Create a new directory, for example, named CALLINGCARDS.  
+Within this directory, make 3 more directories:  output_and_analysis, raw, and CODE.  
+Download the contents of this repository to the CODE directory.  
+
+
 
 
 
