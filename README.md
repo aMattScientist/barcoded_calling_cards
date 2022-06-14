@@ -48,9 +48,9 @@ Move the barcode_safelist.txt and manifest.csv out of the CODE directory into th
 To test the software, download one of our barcoded calling card datasets from the Sequence Read Archive (SRA).   
 
 Navigate into the **'raw'** directory and download the MYOD1 calling card dataset that was jointly prepared with BRB-seq data.   
-The SRA number for this dataset is : SRR17863637).  
+The SRA number for this dataset is : SRR17863637    
 The link for this dataset is:  https://trace.ncbi.nlm.nih.gov/Traces/sra/?run=SRR17863637   
-This GEO sample information is: GSM5857636: MYOD1 joint BRB.   
+The GEO sample information is: GSM5857636: MYOD1 joint BRB.   
 
 One way to download this data is using the SRA toolkit:  
 >ml sratoolkit   
@@ -72,6 +72,4 @@ Using LSF:
 
 # Expected Results
 
-This script should generate a file named NN_MYOD1_jointBRB_hg38_map_sort_final.ccf with approximately 587277 lines.   
-Each line corresponds to a genomic insertion of a barcoded SRT.   
-
+This script should generate a file named NN_MYOD1_jointBRB_hg38_map_sort_final.ccf with approximately 587277 lines. Each line corresponds to a genomic insertion of a barcoded SRT. This file can be used as input for downstream peak calling.  
