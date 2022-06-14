@@ -29,7 +29,7 @@ The main shell script was designed to be executed from a Linux/Unix based high-p
 
 # Getting Started
 
-Within your Linux/Unix based high-performance computing environment, create a new directory named for example, CALLINGCARDS.  
+Within your Linux/Unix based high-performance computing environment, create a new directory. For example, name it CALLINGCARDS.  
 Within this directory, make 3 more directories:  output_and_analysis, raw, and CODE.  
 Download the contents of this repository to the CODE directory.  
 
@@ -37,7 +37,9 @@ If your cluster uses Slurm, append the SLURM_header to bulkRNACallingCards and s
 > cat SLURM_header.txt bulkRNACallingCards > bulkRNACallingCards.sh
 
 Alternatively, if your cluster uses LSF, append the LSF_header.  
-> cat LSF_header.txt bulkRNACallingCards > bulkRNACallingCards.sh
+> cat LSF_header.txt bulkRNACallingCards > bulkRNACallingCards.sh  
+
+Change the relevant path names in bulkRNACallingCards.sh as appropriate    
 
 Move the barcode_safelist.txt and manifest.csv out of the CODE directory into the **'CALLINGCARDS'** directory.  
 
@@ -45,9 +47,9 @@ Move the barcode_safelist.txt and manifest.csv out of the CODE directory into th
 
 To test the software, download one of our barcoded calling card datasets from the Sequence Read Archive (SRA).   
 
-Navigate into the **'raw'** directory and download the MYOD1 calling card dataset that was jointly prepared with BRB-seq data.  
-The SRA number for this dataset is : SRR17863637). 
-The link for this dataset is:  https://trace.ncbi.nlm.nih.gov/Traces/sra/?run=SRR17863637.  
+Navigate into the **'raw'** directory and download the MYOD1 calling card dataset that was jointly prepared with BRB-seq data.   
+The SRA number for this dataset is : SRR17863637).  
+The link for this dataset is:  https://trace.ncbi.nlm.nih.gov/Traces/sra/?run=SRR17863637   
 This GEO sample information is: GSM5857636: MYOD1 joint BRB.   
 
 One way to download this data is using the SRA toolkit:  
@@ -68,5 +70,8 @@ Using Slurm:
 Using LSF:
 >bsub < CODE/bulkRNACallingCards.sh    
 
+# Expected Results
+
+This script should generate a file named NN_MYOD1_jointBRB_hg38_map_sort_final.ccf with approximately 587277 lines. Each line corresponds to a genomic insertion of a barcoded SRT.  
 
 
