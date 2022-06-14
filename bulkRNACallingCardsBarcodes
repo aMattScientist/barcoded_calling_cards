@@ -137,7 +137,7 @@ python $SCRIPTS/AnnotateInsertionSites.py \
 samtools index $OUT_MAP_SORT_PREFIX"_final.bam"
 
 # Get an unsorted list of unique insertions
-python $SCRIPTS/BamToCallingCardOriginal.py -b XP XJ XQ -i $OUT_MAP_SORT_PREFIX"_final.bam" -o $OUT_MAP_SORT_PREFIX"_unsorted.ccf" 
+python $SCRIPTS/BamToCallingCard.py -b XP XJ XQ -i $OUT_MAP_SORT_PREFIX"_final.bam" -o $OUT_MAP_SORT_PREFIX"_unsorted.ccf" 
 
 # Sort the CCF file 
 sort -k1V -k2n -k3n $OUT_MAP_SORT_PREFIX"_unsorted.ccf" > $OUT_MAP_SORT_PREFIX"_final.ccf"
