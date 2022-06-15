@@ -57,7 +57,7 @@ Long_PB_LTR="GCGTCAAT"$PB_LTR
 
 transposase=PB
 
-# Trim and demultiplex by LTR + GGTTAA insertion site (exact matching)
+# Trim and demultiplex by PB_LTR 
 # use PB_LTR, not Long_PB_LTR for older data (just check the first bases after your barcode in Read1 to know)
 # Use -e 0 for stringent matching (exact barcodes)
 
