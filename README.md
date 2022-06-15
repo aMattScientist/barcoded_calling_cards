@@ -58,7 +58,8 @@ One way to download this data is using the SRA toolkit:
 #Rename the file as MYOD1_jointBRB.fastq.gz  
 >mv SRR17863637.fastq.gz > MYOD1_jointBRB.fastq.gz  
 
-Alternatively, we have provided a sub-sampled dataset in the **TUTORIAL** folder, named: test.fq.gz 
+Alternatively, we have provided a sub-sampled dataset in the **TUTORIAL** folder, named: test.fq.gz   
+Move this file to your **raw** directory
 
 The SLURM_header and LSF_header are configured to direct bulkRNACallingCards.sh to analyze line 4 of the manifest (MYOD1_jointBRB.fastq.gz) 
 To analyze the test data instead, change the headers to read line 6. 
