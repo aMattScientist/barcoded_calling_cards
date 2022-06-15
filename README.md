@@ -34,10 +34,14 @@ Within this directory, make 3 more directories:  output_and_analysis, raw, and C
 Download the contents of this repository to the CODE directory.  
 
 If your cluster uses Slurm, append the SLURM_header to bulkRNACallingCards and save this as a shell script.  
-> cat SLURM_header.txt bulkRNACallingCardsBarcodes > bulkRNACallingCardsBarcodes.sh
+```
+cat SLURM_header.txt bulkRNACallingCardsBarcodes > bulkRNACallingCardsBarcodes.sh
+```
 
 Alternatively, if your cluster uses LSF, append the LSF_header.  
-> cat LSF_header.txt bulkRNACallingCardsBarcodes > bulkRNACallingCardsBarcodes.sh  
+```
+cat LSF_header.txt bulkRNACallingCardsBarcodes > bulkRNACallingCardsBarcodes.sh  
+```
 
 Change the relevant path names in bulkRNACallingCardsBarcodes.sh as appropriate    
 
@@ -53,10 +57,12 @@ The link for this dataset is:  https://trace.ncbi.nlm.nih.gov/Traces/sra/?run=SR
 The GEO sample information is: GSM5857636: MYOD1 joint BRB.   
 
 One way to download this data is using the SRA toolkit:  
->ml sratoolkit   
->fastq-dump --gzip SRR17863637  
+```
+ml sratoolkit   
+fastq-dump --gzip SRR17863637  
 #Rename the file as MYOD1_jointBRB.fastq.gz  
->mv SRR17863637.fastq.gz > MYOD1_jointBRB.fastq.gz  
+mv SRR17863637.fastq.gz > MYOD1_jointBRB.fastq.gz  
+```
 
 Alternatively, we have provided a sub-sampled dataset in the **TUTORIAL** folder, named: test.fq.gz   
 Move this file to your **raw** directory
@@ -69,12 +75,18 @@ To analyze the test data instead, change the headers to read line 6.
 From within your **'CALLINGCARDS'** directory, run the following command to submit the job.  
 
 Using Slurm:   
->sbatch CODE/bulkRNACallingCardsBarcodes.sh  
+```
+sbatch CODE/bulkRNACallingCardsBarcodes.sh  
+```
 
 Using LSF:
->bsub < CODE/bulkRNACallingCardsBarcodes.sh    
+```
+bsub < CODE/bulkRNACallingCardsBarcodes.sh    
+```
 
 # Expected Results
 
-This script should generate a file named NN_MYOD1_jointBRB_hg38_map_sort_final.ccf with approximately 587277 lines. Each line corresponds to a genomic insertion of a barcoded SRT. A full test example including all expected intermediate files is provided in the **TUTORIAL** folder.   
-The resulting ccf file can be used as input for downstream peak calling using the mammalian calling cards toolkit:    https://gitlab.com/rob.mitra/mammalian_cc_tools/
+This script should generate a file named NN_MYOD1_jointBRB_hg38_map_sort_final.ccf with approximately 587277 lines. Each line corresponds to a genomic insertion of a barcoded SRT.  
+
+A full test example including all expected intermediate files is provided in the **TUTORIAL** folder.     
+The resulting ccf file can be used as input for downstream peak calling using the mammalian calling cards toolkit:   https://gitlab.com/rob.mitra/mammalian_cc_tools/
