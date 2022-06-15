@@ -58,11 +58,14 @@ One way to download this data is using the SRA toolkit:
 #Rename the file as MYOD1_jointBRB.fastq.gz  
 >mv SRR17863637.fastq.gz > MYOD1_jointBRB.fastq.gz  
 
-Note: this filename corresponds to Line 4 of manifest.csv. Both SLURM_header and LSF_header are configured to direct bulkRNACallingCards.sh to analyze this sample. 
+Alternatively, we have provided a sub-sampled dataset in the **TUTORIAL** folder, named: test.fq.gz 
+
+The SLURM_header and LSF_header are configured to direct bulkRNACallingCards.sh to analyze line 4 of the manifest (MYOD1_jointBRB.fastq.gz) 
+To analyze the test data instead, change the headers to read line 6. 
 
 # Executing the main script 
 
-From the **'CALLINGCARDS'** directory, run the following command to submit the job.  
+From within your **'CALLINGCARDS'** directory, run the following command to submit the job.  
 
 Using Slurm:   
 >sbatch CODE/bulkRNACallingCardsBarcodes.sh  
@@ -72,4 +75,5 @@ Using LSF:
 
 # Expected Results
 
-This script should generate a file named NN_MYOD1_jointBRB_hg38_map_sort_final.ccf with approximately 587277 lines. Each line corresponds to a genomic insertion of a barcoded SRT. This file can be used as input for downstream peak calling.  
+This script should generate a file named NN_MYOD1_jointBRB_hg38_map_sort_final.ccf with approximately 587277 lines. Each line corresponds to a genomic insertion of a barcoded SRT. A full test example including all expected intermediate files is provided in the **TUTORIAL** folder.   
+The resulting ccf file can be used as input for downstream peak calling using the mammalian calling cards toolkit:    https://gitlab.com/rob.mitra/mammalian_cc_tools/
