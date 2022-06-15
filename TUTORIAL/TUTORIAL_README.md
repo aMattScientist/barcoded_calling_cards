@@ -6,9 +6,9 @@ We provide all the intermediate files generated throughout the pipeline.
 
 First, follow the **Getting Started** section of the README 
 
-Input: test.fq.gz
+The input for this tutorial is test.fq.gz
 This file contains 100,000 reads randomly sampled from a MYOD1 calling cards dataset ( SRR17863637 ) 
-For calling card analysis, we only use one read (Read 1) that contains a library barcode, part of the piggyBac transposon, the SRT barcode, the transposon-genome junction, then the genome.   
+For calling card analysis, we only use one read (Read 1) that contains a library barcode, part of the piggyBac transposon, the SRT barcode, the transposon-genome junction, then the genome.  
 
 To run this tuturial, move the test.fq.gz file into your **raw** directory.  
 To analyze the test data, change the header of bulkRNACallingCards.sh to read line 6. 
@@ -29,7 +29,7 @@ bsub < CODE/bulkRNACallingCardsBarcodes.sh
 
 # Understanding the code 
 
-The first command uses cutadapt to find reads that have the 'library barcode' specified in the sample manifest, and that also begin with the piggyBAC LTR sequence. 
+The first command uses cutadapt to find reads that have the 'library barcode' specified in the sample manifest, and that also begin with the piggyBac LTR sequence. 
 
 ```
 cutadapt \
@@ -116,7 +116,7 @@ python $SCRIPTS/TagBamWithSrtBC.py \
 	$OUT_MAP_SORT_PREFIX"_tagged4.bam"
 ```
 
-Next, we calculates the insertion sites of each read and add that info with the tag "XI" 
+Next, we calculate the insertion sites of each read and add that info with the tag "XI" 
 This command enforces that insertions are only valid if the genomic insertion site is "TTAA" for piggyBac-based experiments 
 
 ```
