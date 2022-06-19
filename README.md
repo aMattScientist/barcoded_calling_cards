@@ -1,8 +1,14 @@
 This is a fork of Arnav Moudgil's Calling Card analysis repository (https://github.com/arnavm/calling_cards), with minor modifications to enable analysis of barcoded self-reporting transposon calling cards. Reference: https://www.biorxiv.org/content/10.1101/2021.04.15.439516
 
+The core of the barcoded calling cards piepline starts with your calling cards sequencing data in fastq or gzipped fastq format. 
+The output of this repository is a set of mapped barcoded self-reporting transposon calling cards in qBED format. 
+The output of this pipeline is used to visualize calling card insertions genome-wide and as input for downstream peak calling. 
+
+A running demonstration of the barcoded calling cards pipeline is implemented on Code Ocean:  https://codeocean.com/capsule/6494802/tree  
+
 ## Dependencies
 
-The Python scripts in this folder require `python3`, preferrably a relatively recent version (e.g. ≥ 3.5). In addition, you will need to install the following modules:
+The Python scripts in this repository require `python3`, preferrably a relatively recent version (e.g. ≥ 3.5). In addition, you will need to install the following modules:
 - `pysam`
 - `numpy`
 - `pandas`
@@ -29,6 +35,7 @@ The main shell script was designed to be executed from a Linux/Unix based high-p
 
 # Getting Started
 
+This is a brief guide to run the barcoded calling cards pipeline.  
 Within your Linux/Unix based high-performance computing environment, create a new directory. For example, name it CALLINGCARDS.  
 Within this directory, make 3 more directories:  output_and_analysis, raw, and CODE.  
 Download the contents of this repository to the CODE directory.  
@@ -44,12 +51,11 @@ cat LSF_header.txt bulkRNACallingCardsBarcodes > bulkRNACallingCardsBarcodes.sh
 ```
 
 Change the relevant path names in bulkRNACallingCardsBarcodes.sh as appropriate    
-
 Move the barcode_safelist.txt and manifest.csv out of the CODE directory into the **'CALLINGCARDS'** directory.  
 
 # Example Analysis
 
-To test the software, download one of our barcoded calling card datasets from the Sequence Read Archive (SRA).   
+To run the software, download one of our barcoded calling card datasets from the Sequence Read Archive (SRA).   
 
 Navigate into the **'raw'** directory and download the MYOD1 calling card dataset that was jointly prepared with BRB-seq data.   
 The SRA number for this dataset is : SRR17863637    
@@ -89,4 +95,4 @@ bsub < CODE/bulkRNACallingCardsBarcodes.sh
 This script should generate a file named NN_MYOD1_jointBRB_hg38_map_sort_final.ccf with approximately 587277 lines. Each line corresponds to a genomic insertion of a barcoded SRT.  
 
 A full test example including all expected intermediate files is provided in the **TUTORIAL** folder.     
-The resulting ccf file can be used as input for downstream peak calling using the mammalian calling cards toolkit:   https://gitlab.com/rob.mitra/mammalian_cc_tools/
+The resulting ccf file (qBED format) can be used as input for downstream peak calling using the mammalian calling cards toolkit:   https://gitlab.com/rob.mitra/mammalian_cc_tools/
