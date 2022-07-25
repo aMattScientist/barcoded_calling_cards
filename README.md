@@ -4,7 +4,7 @@ The core of the barcoded calling cards piepline starts with your calling cards s
 The output of this repository is a set of mapped barcoded self-reporting transposon calling cards in qBED format. 
 The output of this pipeline is used to visualize calling card insertions genome-wide and as input for downstream peak calling. 
 
-A running demonstration of the barcoded calling cards pipeline is implemented on Code Ocean:  https://codeocean.com/capsule/6494802/tree  
+A running demonstration of the barcoded calling cards pipeline is implemented on Code Ocean:  https://codeocean.com/capsule/7988662/tree/v1  
 
 ## Dependencies
 
